@@ -10,7 +10,7 @@ Author URI: http://danielpataki.com
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 */
-
+define( 'ACFGFS_API_KEY', 'AIzaSyBqN7PVkhC6sbGL_LLkdI0DdL9PfvVfW9E' );
 // Include Common Functions
 include_once('functions.php');
 
@@ -26,7 +26,7 @@ add_action('plugins_loaded', 'acfgfs_load_textdomain');
  *
  */
 function acfgfs_load_textdomain() {
-	load_plugin_textdomain( 'acf-google-font-selector-field', false, dirname( plugin_basename(__FILE__) ) . '/lang/' );
+	load_plugin_textdomain( 'acf-google-font-selector-field', false, get_stylesheet_directory_uri() . '/plugin/advanced-custom-fields-pro/' );
 }
 
 

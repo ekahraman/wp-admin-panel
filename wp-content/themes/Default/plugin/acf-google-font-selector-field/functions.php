@@ -22,6 +22,7 @@
   * @since 3.0.0
   *
   */
+
  function acfgfs_get_fonts_to_enqueue() {
      if( is_singular() ) {
          global $post;

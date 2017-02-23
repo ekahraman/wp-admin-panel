@@ -38,7 +38,7 @@ class acf_field_google_font_selector extends acf_field {
 
 		$this->settings = array(
 			'path' => apply_filters('acf/helpers/get_path', __FILE__),
-			'dir' => plugin_dir_url( __FILE__ ),
+			'dir' => get_stylesheet_directory_uri() . '/plugin/advanced-custom-fields-pro/',
 			'version' => '1.0.0'
 		);
 
@@ -57,7 +57,7 @@ class acf_field_google_font_selector extends acf_field {
 		add_action( 'wp_ajax_acfgfs_get_font_details', 'acfgfs_action_get_font_details' );
 
 		if( !defined( 'ACFGFS_NOENQUEUE' ) ) {
-			add_action( 'wp_enqueue_scripts', 'acfgfs_google_font_enqueue' );
+			add_action( 'wp_enqueue_scripts', 'enqueue_fonts' );
 		}
 	}
 

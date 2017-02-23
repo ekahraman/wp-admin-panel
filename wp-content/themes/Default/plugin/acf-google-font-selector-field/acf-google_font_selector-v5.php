@@ -46,7 +46,7 @@ class acf_field_google_font_selector extends acf_field {
 		add_action( 'wp_ajax_acfgfs_get_font_details', 'acfgfs_action_get_font_details' );
 
 		if( !defined( 'ACFGFS_NOENQUEUE' ) ) {
-			add_action( 'wp_enqueue_scripts', 'acfgfs_google_font_enqueue' );
+			add_action( 'wp_enqueue_scripts', 'enqueue_fonts' );
 		}
 
 	}
@@ -177,7 +177,7 @@ class acf_field_google_font_selector extends acf_field {
 	 */
 	function input_admin_enqueue_scripts() {
 
-		$dir = plugin_dir_url( __FILE__ );
+		$dir = get_stylesheet_directory_uri() . '/plugin/acf-google-font-selector-field/';
 
 		wp_enqueue_script( 'acf-input-google_font_selector', "{$dir}js/input.js" );
 		wp_enqueue_style( 'acf-input-google_font_selector', "{$dir}css/input.css" );
