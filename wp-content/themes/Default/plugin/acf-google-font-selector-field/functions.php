@@ -65,7 +65,7 @@ function enqueue_fonts(){
         $subsets = array_merge( $subsets, $font['subsets'] );
         $font_name = str_replace( ' ', '+', $font['font'] );
         if( $font['variants'] == array( 'regular' ) ) {
-            $font_element[] = $font_name;
+	        $font_element[] = $font_name . ':' . implode( ',', $font['variants'] );
         }
         else {
             $regular_variant = array_search( 'regular', $font['variants'] );
