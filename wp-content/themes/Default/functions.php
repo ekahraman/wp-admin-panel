@@ -304,6 +304,8 @@ require get_parent_theme_file_path( '/inc/arg-functions.php' );
 
 require get_parent_theme_file_path( '/inc/custom-widget.php' );
 
+require get_parent_theme_file_path( '/inc/social-widget.php' );
+
 add_filter('acf/settings/path', 'my_acf_settings_path');
 
 function my_acf_settings_path( $path ) {
@@ -573,3 +575,4 @@ if(get_options('html_minify')) {
 
     add_action('after_setup_theme', 'wp_html_compression_start');
 }
+add_action('comment_form_after', 'my_comment_form_after');

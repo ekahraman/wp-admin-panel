@@ -14,11 +14,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 <link rel="dns-prefetch" href="//ajax.googleapis.com/">
 <link rel="dns-prefetch" href="//fonts.gstatic.com/">
 <link rel="dns-prefetch" href="//gratavar.com/">
-<link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+    <?php if( get_options('favicon' ) ) { ?>
+        <?php $favicon = get_options('favicon');?>
+        <link rel="shortcut icon" type="image/png" href="<?php $favicon['url']?>" />
+        <link rel='shortcut icon' type='image/x-icon' href='<?php $favicon['url']?>' />
+    <?php } else { ?>
+    <link rel="shortcut icon" href="<?php echo get_stylesheet_directory_uri(); ?>/favicon.ico" />
+    <?php }?>
+
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<body <?php font_class()?> <?php body_class(); ?>>
 <section id="site" class="<?php layout_class(true); ?>">
     <header id="site-header" class="<?php header_class(true); ?>" role="banner">
         <?php get_template_part( 'templates/header/header', header_template() ); ?>

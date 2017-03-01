@@ -554,7 +554,7 @@ function get_post_class( $class = '', $post_id = null ) {
  */
 function body_class( $class = '' ) {
 	// Separates classes with a single space, collates classes for body element
-	echo 'class="' . join( ' ', get_body_class( $class ) ) . '"';
+	echo 'class= font-class "' . join( ' ', get_body_class( $class ) ) . '"';
 }
 
 /**
